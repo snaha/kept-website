@@ -57,5 +57,5 @@
       Notify me at launch
     </Button>
   </div>
-  <p class="text-center text-sm text-white" role="status">{messages[status]}</p>
+  <p class="text-center text-sm leading-[normal] text-white" role="status">{messages[status]}</p>
 </form>
