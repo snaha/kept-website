@@ -74,8 +74,8 @@ See `README.md` for development commands, project structure, and deployment.
 
 ## Commits & Pull Requests
 
-- Use [conventional commits](https://www.conventionalcommits.org/) (e.g. `fix:`, `feat:`, `chore:`);
-  release-please builds the changelog and releases from them
+- Use [conventional commits](https://www.conventionalcommits.org/) (e.g. `fix:`, `feat:`, `chore:`)
+- There are no releases: every merge to `main` deploys the site
 - Keep PR titles and descriptions concise
 - When a PR resolves an issue, reference it with a closing keyword (e.g. `Closes #53`)
 
