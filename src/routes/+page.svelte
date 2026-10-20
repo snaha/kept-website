@@ -1,4 +1,5 @@
 <script lang="ts">
+  import grain from '#lib/assets/grain.svg'
   import logo from '#lib/assets/logo.svg'
 
   import AlbumGrid from './album-grid.svelte'
@@ -33,7 +34,7 @@
 
   <div class="flex w-full flex-col items-center gap-12">
     <div class="flex w-full flex-col items-center gap-6 text-center md:gap-2">
-      <p class="font-display text-lg leading-normal italic md:text-2xl">
+      <p class="font-display text-lg leading-[normal] italic md:text-2xl">
         Building a music library takes effort. Enjoying it shouldn’t.
       </p>
       <h1 class="headline font-semibold uppercase">
@@ -41,7 +42,7 @@
         <span>your own</span>
         <span>music</span>
       </h1>
-      <p class="max-w-[700px] text-lg leading-normal md:max-w-[720px] md:text-2xl">
+      <p class="max-w-[700px] text-lg leading-[normal] md:max-w-[720px] md:text-2xl">
         Kept is a music library for the songs you own. Somewhere there’s a folder of downloaded
         MP3s, purchased digital albums, or CDs you ripped years ago. That collection is yours, and
         it’s worth keeping. Songs can reconnect us with who we were, how we felt, and moments that
@@ -52,6 +53,12 @@
     <SignupForm />
   </div>
 </main>
+
+<div
+  class="grain pointer-events-none fixed inset-0"
+  style:background-image="url({grain})"
+  aria-hidden="true"
+></div>
 
 <style>
   /* Shows before the covers fade in; the cover grid paints over it. */
@@ -72,6 +79,12 @@
   .shade {
     background: radial-gradient(closest-side, rgb(0 0 0 / 25%), #000);
     backdrop-filter: blur(2px);
+  }
+
+  /* Figma's noise effect covers the whole frame, copy included */
+  .grain {
+    background-size: 256px;
+    opacity: 0.105;
   }
 
   /* Figma sets the headline in Basier Circle Narrow; the regular width is
