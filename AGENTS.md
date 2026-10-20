@@ -41,7 +41,10 @@ See `README.md` for development commands, project structure, and deployment.
    - ✅ `import logo from '#lib/assets/logo.svg'` then `<img src={logo} />`
    - ❌ Placing component-used files in `static/` and referencing them by absolute URL — that
      breaks under the `/pr-{num}` base path of PR previews
-   - `static/` is reserved for files that need fixed URLs: favicons, `CNAME`
+   - `static/` is reserved for files that need fixed URLs: favicons, `.nojekyll`
+   - Do not add a `CNAME` to `static/`: it would end up in every PR preview folder, and the deploy
+     action never deletes `CNAME` files, so closed previews would leave folders behind. The root
+     `CNAME` on `gh-pages` (from the Pages custom domain setting) is kept by the deploy action.
 
 4. **External Links**
    - All outbound URLs live in `src/lib/external-links.ts`. Never hard-code them in components.
