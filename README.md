@@ -66,7 +66,8 @@ confirmation email. Without JavaScript the form falls back to a regular POST in 
 - `kept.music/pr-{num}` - PR previews
 
 Both production and PR previews are published to the `gh-pages` branch: `main` deploys to the root,
-each open PR deploys to its own `pr-{num}/` subdirectory (removed when the PR closes). GitHub Pages
+each open PR deploys to its own `pr-{num}/` subdirectory (removed when the PR closes); the preview
+action posts the link as a comment on the PR. GitHub Pages
 serves that branch at `kept.music`.
 
 ## Environment Variables
