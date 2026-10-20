@@ -42,7 +42,7 @@ pnpm check:all        # All of the above checks at once
 - `src/lib/album-rows.ts` - Shuffling and splitting covers into rows
 - `src/lib/newsletter.ts` - Buttondown subscription
 - `src/lib/assets/` - Covers, fonts and logo, imported through Vite (hashed file names)
-- `static/` - Files that need fixed URLs: favicons, `CNAME`
+- `static/` - Files that need fixed URLs: favicons, `.nojekyll`
 
 ### Album covers
 
