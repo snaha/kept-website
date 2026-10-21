@@ -32,8 +32,9 @@ See `README.md` for development commands, project structure, and deployment.
 2. **Design Fidelity**
    - The Figma design is the specification: same copy, order, spacing and sizes.
    - If implementation requires a deviation, surface it before shipping rather than papering over it.
-   - Known deviation: Figma uses _Basier Circle Narrow_; the repository has the regular width
-     Basier Circle, so the headline scales with the viewport to stay on its lines.
+   - Figma's code export drops its Noise effect: the grain is `src/lib/assets/grain.svg`, tuned
+     against the Figma render.
+   - Figma's `leading-[normal]` is CSS `line-height: normal`, not Tailwind's `leading-normal` (1.5).
 
 3. **Assets (images, fonts, SVGs)**
    - Component-used assets live in `src/lib/assets/` and are imported as Vite modules

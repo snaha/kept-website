@@ -87,23 +87,22 @@
     opacity: 0.105;
   }
 
-  /* Figma sets the headline in Basier Circle Narrow; the regular width is
-     wider, so the size also shrinks with the viewport to keep the lines from
-     wrapping. The divisors are the line width in ems: "REDISCOVER" when
-     stacked, the whole headline when on one line (plus some slack). */
+  /* Figma's sizes fit its 360px and 1366px frames; on narrower viewports the
+     headline shrinks so its lines don't wrap. The divisors are the line width
+     in ems: "REDISCOVER" when stacked, the whole headline when on one line
+     (plus some slack). */
   .headline {
     display: flex;
     flex-direction: column;
-    font-size: min(60px, (100vw - 32px) / 6.4);
+    font-size: min(60px, (100vw - 32px) / 5.2);
     line-height: calc(50 / 60);
   }
 
+  /* On one line the words are inline, so the spaces between them show */
   @media (width >= 64rem) {
     .headline {
-      flex-direction: row;
-      justify-content: center;
-      gap: 0.25em;
-      font-size: min(96.628px, (100vw - 64px) / 15.7);
+      display: block;
+      font-size: min(96.628px, (100vw - 64px) / 12.9);
       line-height: normal;
     }
   }
