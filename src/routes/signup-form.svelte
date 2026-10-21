@@ -2,29 +2,31 @@
   import { Button } from '#lib/components/ui/button/index.ts'
   import { Input } from '#lib/components/ui/input/index.ts'
   import externalLinks from '#lib/external-links.ts'
-  import { subscribe } from '#lib/newsletter.ts'
+  import { SubscribeError, subscribe } from '#lib/newsletter.ts'
 
   type Status = 'idle' | 'sending' | 'done' | 'failed'
 
   let email = $state('')
   let status = $state<Status>('idle')
+  let failure = $state<string>()
 
   const messages: Record<Status, string> = {
     idle: 'One email when Kept is ready. Nothing else.',
     sending: 'One email when Kept is ready. Nothing else.',
-    done: 'Almost there. Check your inbox to confirm your email.',
+    done: "You're on the list. We'll email you when Kept is ready.",
     failed: 'Something went wrong. Please try again.',
   }
 
   async function onsubmit(event: SubmitEvent): Promise<void> {
-    // Without JavaScript the form posts to Buttondown in a new tab instead
+    // Without JavaScript the form posts to Loops in a new tab instead
     event.preventDefault()
     status = 'sending'
     try {
       await subscribe(email)
       status = 'done'
       email = ''
-    } catch {
+    } catch (error) {
+      failure = error instanceof SubscribeError ? error.message : undefined
       status = 'failed'
     }
   }
@@ -32,7 +34,7 @@
 
 <form
   class="flex w-full flex-col items-center gap-4"
-  action={externalLinks.BUTTONDOWN_SUBSCRIBE}
+  action={externalLinks.LOOPS_SUBSCRIBE}
   method="post"
   target="_blank"
   {onsubmit}
@@ -57,5 +59,7 @@
       Notify me at launch
     </Button>
   </div>
-  <p class="text-center text-sm leading-[normal] text-white" role="status">{messages[status]}</p>
+  <p class="text-center text-sm leading-[normal] text-white" role="status">
+    {status === 'failed' && failure ? failure : messages[status]}
+  </p>
 </form>
