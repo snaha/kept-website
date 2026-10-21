@@ -3,16 +3,16 @@
 /* Font files go through Vite (relative URLs) so they get hashed names and the
    right base path in PR previews (kept.music/pr-{num}). */
 @font-face {
-  font-family: 'Basier Circle';
-  src: url('./lib/assets/fonts/BasierCircle-Regular.woff2') format('woff2');
+  font-family: 'Basier Circle Narrow';
+  src: url('./lib/assets/fonts/BasierCircleNarrow-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Basier Circle';
-  src: url('./lib/assets/fonts/BasierCircle-SemiBold.woff2') format('woff2');
+  font-family: 'Basier Circle Narrow';
+  src: url('./lib/assets/fonts/BasierCircleNarrow-SemiBold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -27,7 +27,7 @@
 }
 
 @theme inline {
-  --font-sans: 'Basier Circle', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Basier Circle Narrow', ui-sans-serif, system-ui, sans-serif;
   --font-display: 'Novela', ui-serif, Georgia, serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
