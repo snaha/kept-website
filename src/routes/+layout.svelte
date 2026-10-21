@@ -1,6 +1,6 @@
 <script lang="ts">
-  import basierRegular from '#lib/assets/fonts/BasierCircle-Regular.woff2'
-  import basierSemiBold from '#lib/assets/fonts/BasierCircle-SemiBold.woff2'
+  import basierRegular from '#lib/assets/fonts/BasierCircleNarrow-Regular.woff2'
+  import basierSemiBold from '#lib/assets/fonts/BasierCircleNarrow-SemiBold.woff2'
   import novelaItalic from '#lib/assets/fonts/Novela-DisplayItalic.woff2'
 
   import '../app.css'
