@@ -40,7 +40,7 @@ pnpm check:all        # All of the above checks at once
   directions, shuffled on every visit, sized so five rows fill the viewport height)
 - `src/routes/signup-form.svelte` - Launch newsletter signup
 - `src/lib/album-rows.ts` - Shuffling and splitting covers into rows
-- `src/lib/newsletter.ts` - Buttondown subscription
+- `src/lib/newsletter.ts` - Loops subscription
 - `src/lib/assets/` - Covers, fonts and logo, imported through Vite (hashed file names)
 - `static/` - Files that need fixed URLs: favicons, `.nojekyll`
 
@@ -56,9 +56,10 @@ cwebp -q 72 -resize 384 384 -metadata none input.webp -o src/lib/assets/covers/n
 
 ## Newsletter
 
-The signup form posts the email to Buttondown's embed endpoint for the `kept` newsletter
-(`src/lib/external-links.ts`) without leaving the page. Buttondown then sends the visitor a
-confirmation email. Without JavaScript the form falls back to a regular POST in a new tab.
+The signup form posts the email to the Loops form endpoint (`src/lib/external-links.ts`) without
+leaving the page and shows Loops' answer under the form. Double opt-in is off in Loops, so the
+visitor is subscribed right away and gets no confirmation email. Without JavaScript the form falls
+back to a regular POST in a new tab.
 
 ## Deployments
 

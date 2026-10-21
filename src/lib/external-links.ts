@@ -11,8 +11,9 @@
  */
 export default {
   /**
-   * Buttondown's embeddable signup endpoint for the `kept` newsletter. Takes a
-   * form POST with an `email` field; Buttondown then emails a confirmation link.
+   * Loops form endpoint for the launch newsletter (Forms → Settings in Loops).
+   * Takes a form-encoded POST with an `email` field and answers with JSON
+   * `{ success, message? }`; double opt-in is off, so no confirmation email.
    */
-  BUTTONDOWN_SUBSCRIBE: 'https://buttondown.com/api/emails/embed-subscribe/kept',
+  LOOPS_SUBSCRIBE: 'https://app.loops.so/api/newsletter-form/cmvi30ax507th0j1iu7senj7h',
 } as const
